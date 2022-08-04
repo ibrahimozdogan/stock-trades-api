@@ -1,0 +1,25 @@
+version: '2.4'
+services:
+  stock_trades_api:
+    container_name: stock_trades_api
+    build: .
+    links:
+      - mongodb
+    ports:
+      - "3333:3333"
+    volumes:
+      - ./src:/stock-trades-api/src
+  mongodb:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb:/data/db
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongo mongo:27017/mongodb --quiet
+      interval: 10s
+      timeout: 10s
+      retries: 5
+      start_period: 40s
+volumes:
+  mongodb:
