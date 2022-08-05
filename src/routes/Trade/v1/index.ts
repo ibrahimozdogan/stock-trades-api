@@ -21,7 +21,7 @@ export default function (route: Router) {
             } else if (result === -2) {
                 res.status(400).send({ status: false, message: 'TRADE_EXISTS' });
             } else {
-                res.status(201).send({ status: true, message: 'SUCCESS' });
+                res.status(200).send({ status: true, message: 'SUCCESS' });
             }
         } catch (e) {
             console.log(e);

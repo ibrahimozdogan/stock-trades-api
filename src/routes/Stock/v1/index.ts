@@ -9,7 +9,6 @@ export default function (route: Router) {
     route.get('/stocks/:stockSymbol/price',
         async (req: Request<{ stockSymbol: string }>, res: Response) => {
             try {
-                console.log(req.params);
                 const { stockSymbol } = req.params;
                 const { start: startDate, end: endDate } = req.query as { start: string, end: string };
 

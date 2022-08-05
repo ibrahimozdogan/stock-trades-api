@@ -26,6 +26,7 @@ class Trade {
     @Column({
         type: 'varchar',
         length: 2,
+        nullable: false
     })
     public symbol: string;
 
