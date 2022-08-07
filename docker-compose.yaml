@@ -10,13 +10,14 @@ services:
     volumes:
       - ./src:/stock-trades-api/src
   mongodb:
+    container_name: stock_trades_api_db
     image: mongo
     ports:
       - "27017:27017"
     volumes:
       - mongodb:/data/db
     healthcheck:
-      test: echo 'db.runCommand("ping").ok' | mongo mongo:27017/mongodb --quiet
+      test: echo 'db.runCommand("ping").ok' | mongo localhost:27017/mongodb --quiet
       interval: 10s
       timeout: 10s
       retries: 5

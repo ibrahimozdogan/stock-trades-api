@@ -7,7 +7,6 @@ export default function (route: Router) {
 
     route.post('/trades', async (req: Request, res: Response) => {
         try {
-
             const result = await tradeRepository.insertIfNotExists(req.body, {
                 where: {
                     id: req.body.id
@@ -21,7 +20,7 @@ export default function (route: Router) {
             } else if (result === -2) {
                 res.status(400).send({ status: false, message: 'TRADE_EXISTS' });
             } else {
-                res.status(200).send({ status: true, message: 'SUCCESS' });
+                res.status(201).send({ status: true, message: 'SUCCESS' });
             }
         } catch (e) {
             console.log(e);
