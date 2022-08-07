@@ -1,6 +1,6 @@
 # stock-trades-api
 
-API Link: https://stock-trade-api.ibrahimozdogan.com/
+API Link: https://stock-api.ibrahimozdogan.com/
 
 Technologies: Node.js, MongoDb, Docker, AWS EC2, Typescript, Jest, Typeorm, Cloudflare
 
