@@ -66,6 +66,7 @@ export default (trades: Trade[]) => {
             });
         } else {
             stats.push({
+                fluctuations,
                 stock: symbol,
                 max_rise: maxRise,
                 max_fall: maxFall,
